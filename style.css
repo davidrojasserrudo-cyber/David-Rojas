@@ -1,0 +1,146 @@
+/* Variables CSS dinámicas para permitir el cambio de tema desde el panel de administrador */
+        :root {
+            --color-primario: #007A33;    /* Verde Cruceño */
+            --color-secundario: #FFFFFF;  /* Blanco */
+            --color-acento: #005A24;      /* Verde Oscuro */
+            --color-texto-hero: #FFFFFF;
+            --color-fondo-claro: #F4F9F5;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--color-fondo-claro);
+            color: #2c3e50;
+            transition: all 0.3s ease;
+        }
+
+        /* Estilo de la bandera Verde - Blanco - Verde */
+        .bandera-crucena-bar {
+            height: 12px;
+            background: linear-gradient(90deg,
+                var(--color-primario) 0%, var(--color-primario) 33.33%,
+                var(--color-secundario) 33.33%, var(--color-secundario) 66.66%,
+                var(--color-primario) 66.66%, var(--color-primario) 100%);
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        /* Navbar personalizada */
+        .navbar-custom {
+            background-color: var(--color-primario) !important;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .navbar-custom .navbar-brand,
+        .navbar-custom .nav-link {
+            color: var(--color-secundario) !important;
+            font-weight: 600;
+        }
+
+        .navbar-custom .nav-link:hover {
+            opacity: 0.85;
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section con diseño Verde-Blanco-Verde */
+        .hero-section {
+            background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-acento) 100%);
+            color: var(--color-texto-hero);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 8px solid var(--color-secundario);
+        }
+
+        .hero-badge {
+            background-color: var(--color-secundario);
+            color: var(--color-primario);
+            font-weight: 700;
+            padding: 6px 16px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        /* Tarjetas y Botones */
+        .btn-cruceno {
+            background-color: var(--color-primario);
+            color: var(--color-secundario);
+            border: 2px solid var(--color-primario);
+            border-radius: 12px;
+            font-weight: 600;
+            padding: 10px 24px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-cruceno:hover {
+            background-color: var(--color-acento);
+            color: var(--color-secundario);
+            border-color: var(--color-acento);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 122, 51, 0.25);
+        }
+
+        .card-custom {
+            border: none;
+            border-radius: 16px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+            transition: transform 0.3s ease;
+            overflow: hidden;
+            background-color: #ffffff;
+            border-top: 5px solid var(--color-primario);
+        }
+
+        .card-custom:hover {
+            transform: translateY(-5px);
+        }
+
+        .section-title {
+            color: var(--color-primario);
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60%;
+            height: 4px;
+            background-color: var(--color-primario);
+            margin-top: 8px;
+            border-radius: 2px;
+        }
+
+        /* Estilos de Curiosidades */
+        .curiosidad-item {
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border-left: 4px solid transparent;
+        }
+
+        .curiosidad-item:hover, .curiosidad-item.active {
+            background-color: rgba(0, 122, 51, 0.08);
+            border-left: 4px solid var(--color-primario);
+            color: var(--color-primario);
+            font-weight: 600;
+        }
+
+        /* Footer */
+        .footer-custom {
+            background-color: var(--color-primario);
+            color: var(--color-secundario);
+            padding: 40px 0 20px;
+            margin-top: 60px;
+        }
+
+        /* Notificación flotante (Toast personalizado) */
+        #notificacion-flotante {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            display: none;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }

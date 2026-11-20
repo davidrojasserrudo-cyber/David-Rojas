@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santa Cruz de la Sierra - Historia, Gastronomía y Cultura</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Barra superior con los colores de la bandera cruceña -->
+    <div class="bandera-crucena-bar"></div>
+
+    <!-- Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                <i class="bi bi-tree-fill fs-3"></i>
+                <span>Santa Cruz</span>
+            </a>
+            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center gap-2">
+                    <li class="nav-item"><a class="nav-link" href="#historia">Reseñas Históricas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#comidas">Comidas Típicas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#curiosidades">Curiosidades</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <button class="btn btn-light text-success fw-bold rounded-pill px-3 shadow-sm" data-bs-toggle="modal" data-bs-target="#adminModal">
+                            <i class="bi bi-gear-fill me-1"></i> Panel Admin
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section text-center">
+        <div class="container">
+            <span class="hero-badge"><i class="bi bi-geo-alt-fill me-1"></i> Tierra Camba • Bolivia</span>
+            <h1 class="display-4 fw-bold mb-3">Santa Cruz de la Sierra</h1>
+            <p class="lead mb-4 mx-auto" style="max-width: 700px;">
+                Descubre la historia, el sabor de nuestra gastronomía tradicional y las maravillas culturales de la ciudad de los anillos.
+            </p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="#historia" class="btn btn-light text-dark fw-bold px-4 py-2 rounded-pill shadow">Explorar Historia</a>
+                <a href="#curiosidades" class="btn btn-outline-light fw-bold px-4 py-2 rounded-pill">Ver Curiosidades</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección 1: Reseñas Históricas (Dinámica y editable por el Admin) -->
+    <section id="historia" class="py-5">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center flex-wrap mb-4">
+                <h2 class="section-title mb-0">Reseñas Históricas</h2>
+                <button class="btn btn-cruceno btn-sm" data-bs-toggle="modal" data-bs-target="#adminModal" onclick="abrirTabAdmin('tab-resenas')">
+                    <i class="bi bi-plus-circle me-1"></i> Gestionar Reseñas
+                </button>
+            </div>
+
+            <div class="row g-4" id="contenedor-resenas">
+                <!-- Las tarjetas de reseñas se renderizan aquí mediante JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección 2: Comidas Típicas de Santa Cruz -->
+    <section id="comidas" class="py-5 bg-white">
+        <div class="container">
+            <h2 class="section-title">Comidas Típicas Cruceñas</h2>
+            <div class="row g-4">
+                <!-- Plato 1 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card card-custom h-100">
+                        <img src="https://placehold.co/600x400/007A33/FFFFFF?text=Majadito+Cruce%C3%B1o" class="card-img-top" alt="Majadito">
+                        <div class="card-body">
+                            <span class="badge bg-success mb-2">Plato Bandera</span>
+                            <h5 class="card-title fw-bold">Majadito</h5>
+                            <p class="card-text text-muted small">
+                                Preparado a base de arroz tostado con charque (carne seca desmenuzada), urucú que le da su color característico, acompañado de huevo frito y plátano maduro frito.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Plato 2 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card card-custom h-100">
+                        <img src="https://placehold.co/600x400/005A24/FFFFFF?text=Locro+Carretero" class="card-img-top" alt="Locro">
+                        <div class="card-body">
+                            <span class="badge bg-success mb-2">Tradicional</span>
+                            <h5 class="card-title fw-bold">Locro Carretero</h5>
+                            <p class="card-text text-muted small">
+                                Sopa sustanciosa y reconfortante elaborada con arroz, charque o gallina criolla, cebolla verde y urucú. Ideal para compartir en familia.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Plato 3 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card card-custom h-100">
+                        <img src="https://placehold.co/600x400/007A33/FFFFFF?text=Sonso+de+Yuca" class="card-img-top" alt="Sonso">
+                        <div class="card-body">
+                            <span class="badge bg-warning text-dark mb-2">Horneado / Brasa</span>
+                            <h5 class="card-title fw-bold">Sonso de Yuca</h5>
+                            <p class="card-text text-muted small">
+                                Puré de yuca cocida mezclado con abundante queso chaqueño rallado, moldeado en un palo y asado a las brasas hasta quedar dorado.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Plato 4 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card card-custom h-100">
+                        <img src="https://placehold.co/600x400/005A24/FFFFFF?text=Cu%C3%B1ap%C3%A9" class="card-img-top" alt="Cuñapé">
+                        <div class="card-body">
+                            <span class="badge bg-warning text-dark mb-2">Acompañamiento</span>
+                            <h5 class="card-title fw-bold">Cuñapé</h5>
+                            <p class="card-text text-muted small">
+                                Panecillo tradicional horneado hecho con almidón de yuca y queso blanco. Es el compañero inseparable del café de la tarde en Santa Cruz.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección 3: Curiosidades (Con botón desplegable específico solicitado) -->
+    <section id="curiosidades" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Curiosidades de Santa Cruz</h2>
+            <p class="text-muted mb-4">Haz clic en el botón para desplegar la lista de datos emblemáticos de nuestra tierra:</p>
+
+            <div class="row g-4 align-items-start">
+                <div class="col-lg-5">
+                    <!-- Botón principal que despliega la lista -->
+                    <button id="btn-toggle-curiosidades" class="btn btn-cruceno w-100 d-flex justify-content-between align-items-center py-3 px-4 shadow-sm" type="button">
+                        <span><i class="bi bi-list-stars me-2"></i> Ver Lista de Curiosidades</span>
+                        <i id="icono-flecha" class="bi bi-chevron-down transition"></i>
+                    </button>
+
+                    <!-- Lista oculta inicialmente que se muestra al hacer clic -->
+                    <div id="lista-curiosidades-container" class="card card-custom mt-3 d-none">
+                        <div class="list-group list-group-flush">
+                            <button type="button" class="list-group-item list-group-item-action curiosidad-item py-3 active" onclick="mostrarDetalleCuriosidad('anillos', this)">
+                                <i class="bi bi-bullseye me-2"></i> 1. Ciudad de los Anillos
+                            </button>
+                            <button type="button" class="list-group-item list-group-item-action curiosidad-item py-3" onclick="mostrarDetalleCuriosidad('fundacion', this)">
+                                <i class="bi bi-flag-fill me-2"></i> 2. Fundación
+                            </button>
+                            <button type="button" class="list-group-item list-group-item-action curiosidad-item py-3" onclick="mostrarDetalleCuriosidad('bandera', this)">
+                                <i class="bi bi-bookmark-star-fill me-2"></i> 3. Bandera Cruceña
+                            </button>
+                            <button type="button" class="list-group-item list-group-item-action curiosidad-item py-3" onclick="mostrarDetalleCuriosidad('tajibo', this)">
+                                <i class="bi bi-flower1 me-2"></i> 4. El Tajibo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visor de detalle de la curiosidad seleccionada -->
+                <div class="col-lg-7">
+                    <div class="card card-custom p-4" id="detalle-curiosidad-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="bg-success bg-opacity-10 text-success p-3 rounded-circle me-3">
+                                <i id="curiosidad-icono" class="bi bi-bullseye fs-3"></i>
+                            </div>
+                            <div>
+                                <span class="text-uppercase small fw-bold text-muted">Dato Cultural</span>
+                                <h3 id="curiosidad-titulo" class="fw-bold mb-0">Ciudad de los Anillos</h3>
+                            </div>
+                        </div>
+                        <p id="curiosidad-descripcion" class="text-secondary lh-lg mb-0">
+                            Santa Cruz de la Sierra es mundialmente conocida por su diseño urbanístico radial y concéntrico, inspirado en las ciudades jardín europeas. Sus avenidas principales forman anillos circulares numerados (del 1° al 8° anillo y más) que rodean el casco viejo, conectados por avenidas radiales que parten desde el centro hacia las afueras.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Código PHP de Referencia (Colapsable para el desarrollador/administrador) -->
+    <section class="container mb-5">
+        <div class="accordion" id="accordionPhp">
+            <div class="accordion-item rounded-4 overflow-hidden border-0 shadow-sm">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed fw-bold text-success bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePhp">
+                        <i class="bi bi-filetype-php fs-4 me-2"></i> Ver Código Backend en PHP (Para conexión a Base de Datos MySQL)
+                    </button>
+                </h2>
+                <div id="collapsePhp" class="accordion-collapse collapse" data-bs-parent="#accordionPhp">
+                    <div class="accordion-body bg-dark text-light">
+                        <p class="small text-info mb-2">// Guarda este código como <strong>api_santacruz.php</strong> en tu servidor local (XAMPP/Laragon) para persistir los cambios en MySQL:</p>
+                        <pre class="mb-0 small" style="max-height: 300px; overflow-y: auto;"><code>&lt;?php
+header("Content-Type: application/json; charset=UTF-8");
+$conexion = new mysqli("localhost", "root", "", "db_santacruz");
+
+if ($conexion->connect_error) {
+    die(json_encode(["error" => "Error de conexión: " . $conexion->connect_error]));
+}
+
+$accion = $_POST['accion'] ?? $_GET['accion'] ?? '';
+
+// 1. Listar Reseñas Históricas
+if ($accion === 'listar_resenas') {
+    $res = $conexion->query("SELECT * FROM resenas_historicas ORDER BY id DESC");
+    echo json_encode($res->fetch_all(MYSQLI_ASSOC));
+}
+
+// 2. Agregar o Modificar Reseña
+if ($accion === 'guardar_resena') {
+    $id = $_POST['id'] ?? '';
+    $titulo = $conexion->real_escape_string($_POST['titulo']);
+    $anio = $conexion->real_escape_string($_POST['anio']);
+    $contenido = $conexion->real_escape_string($_POST['contenido']);
+
+    if (empty($id)) {
+        $conexion->query("INSERT INTO resenas_historicas (titulo, anio, contenido) VALUES ('$titulo', '$anio', '$contenido')");
+    } else {
+        $conexion->query("UPDATE resenas_historicas SET titulo='$titulo', anio='$anio', contenido='$contenido' WHERE id=$id");
+    }
+    echo json_encode(["status" => "ok"]);
+}
+
+// 3. Eliminar Reseña
+if ($accion === 'eliminar_resena') {
+    $id = intval($_POST['id']);
+    $conexion->query("DELETE FROM resenas_historicas WHERE id=$id");
+    echo json_encode(["status" => "eliminado"]);
+}
+
+// 4. Actualizar Configuración (Colores Verde-Blanco-Verde y Datos del Autor)
+if ($accion === 'guardar_config') {
+    $colorPrimario = $conexion->real_escape_string($_POST['color_primario']);
+    $nombreAutor = $conexion->real_escape_string($_POST['nombre_autor']);
+    $telefonoAutor = $conexion->real_escape_string($_POST['telefono_autor']);
+
+    $conexion->query("UPDATE configuracion SET color_primario='$colorPrimario', nombre_autor='$nombreAutor', telefono_autor='$telefonoAutor' WHERE id=1");
+    echo json_encode(["status" => "config_actualizada"]);
+}
+?&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de Página con Nombre y Número Modificables -->
+    <footer id="contacto" class="footer-custom">
+        <div class="container">
+            <div class="row align-items-center gy-3">
+                <div class="col-md-6 text-center text-md-start">
+                    <h5 class="fw-bold mb-1"><i class="bi bi-tree-fill me-2"></i>Portal Cultural Santa Cruz</h5>
+                    <p class="small mb-0 opacity-75">Orgullo Camba • Verde, Blanco y Verde</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <div class="d-inline-block bg-white text-dark px-4 py-3 rounded-4 shadow-sm text-start">
+                        <div class="d-flex justify-content-between align-items-center gap-3">
+                            <div>
+                                <p class="mb-1 small text-muted fw-bold text-uppercase">Desarrollado por:</p>
+                                <h6 class="fw-bold mb-1 text-success" id="footer-nombre">Tu Nombre Aquí</h6>
+                                <p class="mb-0 small fw-semibold"><i class="bi bi-whatsapp text-success me-1"></i> <span id="footer-telefono">+591 70000000</span></p>
+                            </div>
+                            <button class="btn btn-sm btn-outline-success rounded-circle" title="Editar mis datos" data-bs-toggle="modal" data-bs-target="#adminModal" onclick="abrirTabAdmin('tab-autor')">
+                                <i class="bi bi-pencil-fill"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 opacity-25">
+            <div class="text-center small opacity-75">
+                &copy; 2026 Todos los derechos reservados • Santa Cruz de la Sierra, Bolivia.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Barra inferior bandera cruceña -->
+    <div class="bandera-crucena-bar"></div>
+
+    <!-- MODAL PANEL DE ADMINISTRADOR -->
+    <div class="modal fade" id="adminModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content rounded-4 border-0 shadow-lg">
+                <div class="modal-header text-white" style="background-color: var(--color-primario);">
+                    <h5 class="modal-title fw-bold"><i class="bi bi-shield-lock-fill me-2"></i>Panel de Administración</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <!-- Pestañas del Administrador -->
+                    <ul class="nav nav-pills mb-4 gap-2" id="adminTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active fw-semibold" id="tab-resenas-btn" data-bs-toggle="pill" data-bs-target="#tab-resenas" type="button">
+                                <i class="bi bi-journal-text me-1"></i> Reseñas Históricas
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link fw-semibold" id="tab-colores-btn" data-bs-toggle="pill" data-bs-target="#tab-colores" type="button">
+                                <i class="bi bi-palette-fill me-1"></i> Colores de la Página
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link fw-semibold" id="tab-autor-btn" data-bs-toggle="pill" data-bs-target="#tab-autor" type="button">
+                                <i class="bi bi-person-badge-fill me-1"></i> Mis Datos (Pie de Página)
+                            </button>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <!-- TAB 1: CRUD de Reseñas Históricas -->
+                        <div class="tab-pane fade show active" id="tab-resenas">
+                            <form id="form-resena" class="bg-light p-3 rounded-3 mb-4 border">
+                                <h6 class="fw-bold text-success mb-3" id="form-resena-titulo">Agregar Nueva Reseña Histórica</h6>
+                                <input type="hidden" id="resena-id">
+                                <div class="row g-2 mb-2">
+                                    <div class="col-md-8">
+                                        <label class="form-label small fw-bold">Título del Acontecimiento</label>
+                                        <input type="text" id="resena-titulo" class="form-control" placeholder="Ej: Fundación de Santa Cruz" required>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label small fw-bold">Año / Época</label>
+                                        <input type="text" id="resena-anio" class="form-control" placeholder="Ej: 1561" required>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label small fw-bold">Descripción Histórica</label>
+                                    <textarea id="resena-contenido" class="form-control" rows="3" placeholder="Escribe los detalles históricos..." required></textarea>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <button type="submit" class="btn btn-cruceno btn-sm"><i class="bi bi-save me-1"></i> Guardar Reseña</button>
+                                    <button type="button" id="btn-cancelar-edicion" class="btn btn-secondary btn-sm d-none" onclick="resetFormResena()">Cancelar Edición</button>
+                                </div>
+                            </form>
+
+                            <h6 class="fw-bold mb-2">Reseñas Actuales:</h6>
+                            <div class="list-group" id="admin-lista-resenas">
+                                <!-- Lista administrativa de reseñas -->
+                            </div>
+                        </div>
+
+                        <!-- TAB 2: Cambiar Colores de la Página -->
+                        <div class="tab-pane fade" id="tab-colores">
+                            <h6 class="fw-bold mb-3">Selecciona el Tema Visual de la Página:</h6>
+                            <div class="row g-3 mb-4">
+                                <div class="col-md-4">
+                                    <div class="card p-3 text-center border-2 border-success cursor-pointer" onclick="aplicarTema('#007A33', '#FFFFFF', '#005A24', '#F4F9F5')">
+                                        <div class="d-flex justify-content-center mb-2" style="height: 30px; border-radius: 6px; overflow: hidden; border: 1px solid #ccc;">
+                                            <div style="width: 33.3%; background: #007A33;"></div>
+                                            <div style="width: 33.3%; background: #FFFFFF;"></div>
+                                            <div style="width: 33.3%; background: #007A33;"></div>
+                                        </div>
+                                        <strong class="small">Verde, Blanco y Verde</strong>
+                                        <span class="badge bg-success mt-1">Oficial Cruceño</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card p-3 text-center cursor-pointer" onclick="aplicarTema('#198754', '#FFFFFF', '#0F5132', '#E8F5E9')">
+                                        <div class="d-flex justify-content-center mb-2" style="height: 30px; border-radius: 6px; overflow: hidden; border: 1px solid #ccc;">
+                                            <div style="width: 33.3%; background: #198754;"></div>
+                                            <div style="width: 33.3%; background: #FFFFFF;"></div>
+                                            <div style="width: 33.3%; background: #198754;"></div>
+                                        </div>
+                                        <strong class="small">Verde Esmeralda</strong>
+                                        <span class="badge bg-secondary mt-1">Clásico</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card p-3 text-center cursor-pointer" onclick="aplicarTema('#2E7D32', '#F8F9FA', '#1B5E20', '#F1F8E9')">
+                                        <div class="d-flex justify-content-center mb-2" style="height: 30px; border-radius: 6px; overflow: hidden; border: 1px solid #ccc;">
+                                            <div style="width: 33.3%; background: #2E7D32;"></div>
+                                            <div style="width: 33.3%; background: #F8F9FA;"></div>
+                                            <div style="width: 33.3%; background: #2E7D32;"></div>
+                                        </div>
+                                        <strong class="small">Verde Tajibo Bosque</strong>
+                                        <span class="badge bg-secondary mt-1">Naturaleza</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr>
+                            <h6 class="fw-bold mb-3">Personalización Manual de Colores:</h6>
+                            <div class="row g-3 align-items-end">
+                                <div class="col-md-4">
+                                    <label class="form-label small fw-bold">Color Principal (Franjas Verdes)</label>
+                                    <input type="color" id="picker-primario" class="form-control form-control-color w-100" value="#007A33">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label small fw-bold">Color Secundario (Franja Blanca)</label>
+                                    <input type="color" id="picker-secundario" class="form-control form-control-color w-100" value="#FFFFFF">
+                                </div>
+                                <div class="col-md-4">
+                                    <button type="button" class="btn btn-cruceno w-100" onclick="aplicarColoresPersonalizados()">Aplicar Colores</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- TAB 3: Modificar Nombre y Número del Pie de Página -->
+                        <div class="tab-pane fade" id="tab-autor">
+                            <form id="form-autor" class="bg-light p-3 rounded-3 border">
+                                <h6 class="fw-bold text-success mb-3">Editar Información de Contacto (Pie de Página)</h6>
+                                <div class="mb-3">
+                                    <label class="form-label small fw-bold">Tu Nombre Completo</label>
+                                    <input type="text" id="input-autor-nombre" class="form-control" value="Tu Nombre Aquí" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label small fw-bold">Tu Número de Teléfono / WhatsApp</label>
+                                    <input type="text" id="input-autor-telefono" class="form-control" value="+591 70000000" required>
+                                </div>
+                                <button type="submit" class="btn btn-cruceno"><i class="bi bi-check-circle me-1"></i> Actualizar Mis Datos</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Alerta flotante para confirmaciones sin usar alert() -->
+    <div id="notificacion-flotante" class="alert alert-success d-flex align-items-center gap-2 mb-0" role="alert">
+        <i class="bi bi-check-circle-fill fs-5"></i>
+        <span id="notificacion-texto" class="fw-semibold">Acción completada</span>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>

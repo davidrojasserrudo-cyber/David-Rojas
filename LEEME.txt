@@ -1,0 +1,14 @@
+PROYECTO: Santa Cruz de la Sierra
+
+Archivos:
+- index.html: estructura de la página.
+- style.css: estilos y diseño visual.
+- script.js: funciones e interactividad.
+
+Uso:
+1. Mantén los tres archivos en la misma carpeta.
+2. Abre index.html en tu navegador.
+3. Se requiere conexión a Internet para cargar Bootstrap, Bootstrap Icons y Google Fonts desde sus CDN.
+
+Nota:
+El documento original también muestra un ejemplo de backend PHP para MySQL. Ese ejemplo se conserva dentro de la sección correspondiente del HTML; no forma parte de los tres archivos solicitados.
